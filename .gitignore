@@ -1,1 +1,5 @@
-TestCherryPickAutomation.xcodeproj/project.xcworkspace/xcuserdata/*
+xcuserdata
+*.xcuserstate
+DerivedData
+profile
+*.pbxuser
