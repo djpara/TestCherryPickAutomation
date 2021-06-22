@@ -15,6 +15,7 @@ NC="\033[0m"
 branches=$(git for-each-ref --format='%(refname:short)' refs/heads)
 currentAuthor=$(git config user.name)
 currentBranch=$(git symbolic-ref --short HEAD)
+newBranch="$currentBranch"-cherry-pick
 
 arguments=$@
 baseFlag="-b"
@@ -50,6 +51,12 @@ if [[ $branches != *$targetBranch* ]]
         exit 0
 fi
 
+if [[ $branches == *$newBranch* ]]
+    then
+        printf "$newBranch${Red} already exists. Aborting...\n"
+        exit 0
+fi
+
 echo ""
 git checkout $baseBranch
 printf "${Brown}Updating ${Green}$baseBranch${NC}...\n"
@@ -61,7 +68,6 @@ printf "${Brown}Updating ${Green}$targetBranch${NC}...\n"
 git pull origin $targetBranch
 
 echo ""
-newBranch="$currentBranch"-cherry-pick
 printf "${Brown}Creating new branch ${Green}$newBranch${NC}...\n"
 git checkout -b $newBranch
 
