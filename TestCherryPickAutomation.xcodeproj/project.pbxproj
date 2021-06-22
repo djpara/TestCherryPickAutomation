@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BD0F002267BC40D009DFC15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F001267BC40D009DFC15 /* AppDelegate.swift */; };
-		4BD0F004267BC40D009DFC15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F003267BC40D009DFC15 /* SceneDelegate.swift */; };
-		4BD0F006267BC40D009DFC15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F005267BC40D009DFC15 /* ViewController.swift */; };
-		4BD0F009267BC40D009DFC15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD0F007267BC40D009DFC15 /* Main.storyboard */; };
 		4BD0F00B267BC40E009DFC15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD0F00A267BC40E009DFC15 /* Assets.xcassets */; };
-		4BD0F00E267BC40E009DFC15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD0F00C267BC40E009DFC15 /* LaunchScreen.storyboard */; };
 		4BD0F019267BC40E009DFC15 /* TestCherryPickAutomationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F018267BC40E009DFC15 /* TestCherryPickAutomationTests.swift */; };
 		4BD0F024267BC40E009DFC15 /* TestCherryPickAutomationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F023267BC40E009DFC15 /* TestCherryPickAutomationUITests.swift */; };
+		4BD0F032267BC901009DFC15 /* TestCherryPickAutomationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F031267BC901009DFC15 /* TestCherryPickAutomationApp.swift */; };
+		4BD0F035267BC957009DFC15 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD0F034267BC957009DFC15 /* MainView.swift */; };
+		4BD0F038267BCA41009DFC15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD0F037267BCA41009DFC15 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +34,7 @@
 
 /* Begin PBXFileReference section */
 		4BD0EFFE267BC40D009DFC15 /* TestCherryPickAutomation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCherryPickAutomation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD0F001267BC40D009DFC15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BD0F003267BC40D009DFC15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4BD0F005267BC40D009DFC15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4BD0F008267BC40D009DFC15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BD0F00A267BC40E009DFC15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4BD0F00D267BC40E009DFC15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BD0F00F267BC40E009DFC15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD0F014267BC40E009DFC15 /* TestCherryPickAutomationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCherryPickAutomationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD0F018267BC40E009DFC15 /* TestCherryPickAutomationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCherryPickAutomationTests.swift; sourceTree = "<group>"; };
@@ -49,6 +42,9 @@
 		4BD0F01F267BC40E009DFC15 /* TestCherryPickAutomationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCherryPickAutomationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD0F023267BC40E009DFC15 /* TestCherryPickAutomationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCherryPickAutomationUITests.swift; sourceTree = "<group>"; };
 		4BD0F025267BC40E009DFC15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BD0F031267BC901009DFC15 /* TestCherryPickAutomationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCherryPickAutomationApp.swift; sourceTree = "<group>"; };
+		4BD0F034267BC957009DFC15 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4BD0F037267BCA41009DFC15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +95,11 @@
 		4BD0F000267BC40D009DFC15 /* TestCherryPickAutomation */ = {
 			isa = PBXGroup;
 			children = (
-				4BD0F001267BC40D009DFC15 /* AppDelegate.swift */,
-				4BD0F003267BC40D009DFC15 /* SceneDelegate.swift */,
-				4BD0F005267BC40D009DFC15 /* ViewController.swift */,
-				4BD0F007267BC40D009DFC15 /* Main.storyboard */,
+				4BD0F036267BCA34009DFC15 /* Preview Content */,
 				4BD0F00A267BC40E009DFC15 /* Assets.xcassets */,
-				4BD0F00C267BC40E009DFC15 /* LaunchScreen.storyboard */,
 				4BD0F00F267BC40E009DFC15 /* Info.plist */,
+				4BD0F031267BC901009DFC15 /* TestCherryPickAutomationApp.swift */,
+				4BD0F034267BC957009DFC15 /* MainView.swift */,
 			);
 			path = TestCherryPickAutomation;
 			sourceTree = "<group>";
@@ -126,6 +120,14 @@
 				4BD0F025267BC40E009DFC15 /* Info.plist */,
 			);
 			path = TestCherryPickAutomationUITests;
+			sourceTree = "<group>";
+		};
+		4BD0F036267BCA34009DFC15 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4BD0F037267BCA41009DFC15 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +233,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD0F00E267BC40E009DFC15 /* LaunchScreen.storyboard in Resources */,
+				4BD0F038267BCA41009DFC15 /* Preview Assets.xcassets in Resources */,
 				4BD0F00B267BC40E009DFC15 /* Assets.xcassets in Resources */,
-				4BD0F009267BC40D009DFC15 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BD0F006267BC40D009DFC15 /* ViewController.swift in Sources */,
-				4BD0F002267BC40D009DFC15 /* AppDelegate.swift in Sources */,
-				4BD0F004267BC40D009DFC15 /* SceneDelegate.swift in Sources */,
+				4BD0F032267BC901009DFC15 /* TestCherryPickAutomationApp.swift in Sources */,
+				4BD0F035267BC957009DFC15 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,25 +294,6 @@
 			targetProxy = 4BD0F020267BC40E009DFC15 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4BD0F007267BC40D009DFC15 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BD0F008267BC40D009DFC15 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4BD0F00C267BC40E009DFC15 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BD0F00D267BC40E009DFC15 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4BD0F026267BC40E009DFC15 /* Debug */ = {
