@@ -114,6 +114,7 @@ then
     exitFailed
 fi
 
+echo ""
 git status
 
 echo ""
