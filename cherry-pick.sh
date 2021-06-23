@@ -116,5 +116,4 @@ fi
 echo ""
 git status
 
-echo ""
 exitSuccess
