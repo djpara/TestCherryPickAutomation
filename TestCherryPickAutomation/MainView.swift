@@ -9,8 +9,11 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             Text("Hello, World!")
+            Text("Hello, You!")
+            Text("Hello, Everyone!")
+            Text("👋")
         }
     }
 }
