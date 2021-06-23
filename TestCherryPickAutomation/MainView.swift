@@ -12,6 +12,7 @@ struct MainView: View {
         VStack(spacing: 16) {
             Text("Hello, World!")
             Text("Hello, You!")
+            Text("Hello, Everyone!")
         }
     }
 }
