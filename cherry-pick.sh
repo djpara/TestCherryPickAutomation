@@ -85,7 +85,7 @@ printf "${Brown}Creating new branch ${Green}$newBranch${NC} from \'"$(git symbol
 git checkout -b $newBranch
 
 echo ""
-printf "${Blue}Retrieving merged commits from ${NC}$currentBranch${Blue}...${NC}\n"
+printf "${Brown}Retrieving commits from ${NC}$currentBranch${Brown}...${NC}\n"
 commitsSinceLastMerge=($(git log --pretty=%H $baseBranch..$currentBranch --author="$currentAuthor"))
 
 numberOfCommitsSinceLastMerge=${#commitsSinceLastMerge[@]}
