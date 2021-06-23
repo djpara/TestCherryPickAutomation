@@ -109,7 +109,7 @@ conflicts=$(git diff --name-status)
 if [ ! -z "$conflicts" ]
 then
     printf "${Red}Please resolve the following conflicts:${NC}\n\n"
-    conflicts
+    $conflicts
     echo ""
     exitFailed
 fi
