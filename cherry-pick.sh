@@ -32,7 +32,7 @@ exitSuccess () {
 }
 
 echo""
-printf "🍒 ${Blue}Picking Cherries!${NC} 🍒\n"
+printf "🍒 ${Blue}Picking Cherries!${NC} 🍒\n\n"
 
 branches=$(git for-each-ref --format='%(refname:short)' refs/heads)
 currentAuthor=$(git config user.name)
@@ -75,7 +75,6 @@ then
     exitFailed "$newBranch${Red} already exists...${NC}"
 fi
 
-echo ""
 git checkout $baseBranch
 printf "${Brown}Updating ${Green}$baseBranch${NC}...\n"
 git pull origin $baseBranch
