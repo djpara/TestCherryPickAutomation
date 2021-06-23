@@ -25,6 +25,8 @@ exitSuccess () {
     if [ ! -z "$1" ]
     then
         printf "$1\n\n"
+    else
+        printf "\n\n"
     fi
     exit 1
 }
