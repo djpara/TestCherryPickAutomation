@@ -39,15 +39,6 @@ currentAuthor=$(git config user.name)
 currentBranch=$(git symbolic-ref --short HEAD)
 newBranch="$currentBranch"-cherry-pick
 
-arguments=$@
-baseFlag="-b"
-targetFlag="-t"
-
-if [[ $arguments != *$baseFlag* || $arguments != *$targetFlag* ]]
-then
-    exitFailed "${Red}You need to specify the base branch [-b] AND the target branch [-t]${NC}"
-fi
- 
 while getopts b:t: flag
 do
     case $flag in
@@ -59,6 +50,11 @@ do
         ;;
     esac
 done
+
+if [ -z $baseBranch ] || [ -z $targetBranch ]
+then
+    exitFailed "${Red}You need to specify the base branch [-b] AND the target branch [-t]${NC}"
+fi
 
 if [[ $branches != *$baseBranch* ]]
 then
