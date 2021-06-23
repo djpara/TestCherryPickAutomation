@@ -13,6 +13,7 @@ struct MainView: View {
             Text("Hello, World!")
             Text("Hello, You!")
             Text("Hello, Everyone!")
+            Text("👋")
         }
     }
 }
