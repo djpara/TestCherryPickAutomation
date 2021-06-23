@@ -95,7 +95,7 @@ printf "${Brown}Preparing last $numberOfCommitsSinceLastMerge commits for cherry
 
 for ((i=$numberOfCommitsSinceLastMerge-1; i>-1; i--))
 do
-    printf "🍒 ${Brown}Cherry-picking ${NC}${commitsSinceLastMerge[$i]}... 🍒\n"
+    printf "🍒 ${Brown}Cherry-picking ${NC}${commitsSinceLastMerge[$i]}\n"
     git cherry-pick -n ${commitsSinceLastMerge[$i]}
 done
 
