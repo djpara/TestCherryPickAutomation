@@ -108,7 +108,7 @@ done
 if [ ! -z "$(git diff --name-status)" ]
 then
     echo ""
-    printf "${Red}Please resolve the following conflicts:${NC}\n\n"
+    printf "${Red}Please resolve merge:${NC}\n\n"
     git diff --name-status
     echo ""
     exitFailed
