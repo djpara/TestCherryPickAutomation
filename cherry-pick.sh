@@ -81,7 +81,7 @@ printf "${Brown}Updating ${Green}$targetBranch${NC}...\n"
 git pull origin $targetBranch
 
 echo ""
-printf "${Brown}Creating new branch ${Green}$newBranch${NC}...\n"
+printf "${Brown}Creating new branch ${Green}$newBranch${NC} from \'"$(git symbolic-ref --short HEAD)"\'...\n"
 git checkout -b $newBranch
 
 echo ""
