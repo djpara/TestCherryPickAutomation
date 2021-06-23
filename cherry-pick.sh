@@ -101,20 +101,20 @@ printf "${Brown}Preparing last $numberOfCommitsSinceLastMerge commits for cherry
 for i in $commitsSinceLastMerge
 do
     echo ""
-    echo "🍒 Cherry-picking $i from $currentBranch to $newBranch... 🍒"
+    printf "🍒 Cherry-picking $i from $currentBranch to $newBranch... 🍒\n"
     git cherry-pick -n $i
 done
 
 conflicts=$(git diff --name-status)
 if [ ! -z "$conflicts" ]
 then
-    printf "${Red}Please resolve the following conflicts:${NC}\n"
+    printf "${Red}Please resolve the following conflicts:${NC}\n\n"
     conflicts
+    echo ""
     exitFailed
 fi
 
 git status
 
 echo ""
-printf "${Green}Success!${NC}\n"
-exit 1
+exitSuccess
