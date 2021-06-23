@@ -25,28 +25,20 @@ exitSuccess () {
     if [ ! -z "$1" ]
     then
         printf "$1\n\n"
+    else
+        printf "\n\n"
     fi
     exit 1
 }
 
 echo""
-printf "🍒 ${Blue}Picking Cherries!${NC} 🍒\n"
-echo ""
+printf "🍒 ${Blue}Picking Cherries!${NC} 🍒\n\n"
 
 branches=$(git for-each-ref --format='%(refname:short)' refs/heads)
 currentAuthor=$(git config user.name)
 currentBranch=$(git symbolic-ref --short HEAD)
 newBranch="$currentBranch"-cherry-pick
 
-arguments=$@
-baseFlag="-b"
-targetFlag="-t"
-
-if [[ $arguments != *$baseFlag* || $arguments != *$targetFlag* ]]
-then
-    exitFailed "${Red}You need to specify the base branch [-b] AND the target branch [-t]${NC}"
-fi
- 
 while getopts b:t: flag
 do
     case $flag in
@@ -58,6 +50,11 @@ do
         ;;
     esac
 done
+
+if [ -z $baseBranch ] || [ -z $targetBranch ]
+then
+    exitFailed "${Red}You need to specify the base branch [-b] AND the target branch [-t]${NC}"
+fi
 
 if [[ $branches != *$baseBranch* ]]
 then
@@ -74,7 +71,6 @@ then
     exitFailed "$newBranch${Red} already exists...${NC}"
 fi
 
-echo ""
 git checkout $baseBranch
 printf "${Brown}Updating ${Green}$baseBranch${NC}...\n"
 git pull origin $baseBranch
@@ -85,21 +81,21 @@ printf "${Brown}Updating ${Green}$targetBranch${NC}...\n"
 git pull origin $targetBranch
 
 echo ""
-printf "${Brown}Creating new branch ${Green}$newBranch${NC}...\n"
+printf "${Brown}Creating new branch ${Green}$newBranch${NC} from \'"$(git symbolic-ref --short HEAD)"\'...\n"
 git checkout -b $newBranch
 
 echo ""
-printf "${Blue}Retrieving merged commits from ${NC}$currentBranch${Blue}...${NC}\n"
+printf "${Brown}Retrieving commits from ${NC}$currentBranch${Brown}...${NC}\n"
 commitsSinceLastMerge=($(git log --pretty=%H $baseBranch..$currentBranch --author="$currentAuthor"))
 
 numberOfCommitsSinceLastMerge=${#commitsSinceLastMerge[@]}
 printf "${Brown}Preparing last $numberOfCommitsSinceLastMerge commits for cherry-picking${NC}
     \t${LightGray}Base branch:${NC} $baseBranch
-    \t${Green}Target branch:${NC} $targetBranch\n"
+    \t${Green}Target branch:${NC} $targetBranch\n\n"
 
 for ((i=$numberOfCommitsSinceLastMerge-1; i>-1; i--))
 do
-    printf "\n🍒 ${Brown}Cherry-picking ${NC}${commitsSinceLastMerge[$i]} ${Brown}from${NC} \'$currentBranch\' ${Brown}to${NC} \'$newBranch\'... 🍒\n"
+    printf "🍒 ${Brown}Cherry-picking ${NC}${commitsSinceLastMerge[$i]}\n"
     git cherry-pick -n ${commitsSinceLastMerge[$i]}
 done
 
@@ -112,7 +108,7 @@ then
     exitFailed
 fi
 
+echo ""
 git status
 
-echo ""
 exitSuccess
