@@ -105,11 +105,10 @@ do
     git cherry-pick -n $i
 done
 
-conflicts=$(git diff --name-status)
-if [ ! -z "$conflicts" ]
+if [ ! -z "$(git diff --name-status)" ]
 then
     printf "${Red}Please resolve the following conflicts:${NC}\n\n"
-    $conflicts
+    git diff --name-status
     echo ""
     exitFailed
 fi
