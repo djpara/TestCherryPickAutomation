@@ -33,7 +33,6 @@ exitSuccess () {
 
 echo""
 printf "🍒 ${Blue}Picking Cherries!${NC} 🍒\n"
-echo ""
 
 branches=$(git for-each-ref --format='%(refname:short)' refs/heads)
 currentAuthor=$(git config user.name)
@@ -97,11 +96,11 @@ commitsSinceLastMerge=($(git log --pretty=%H $baseBranch..$currentBranch --autho
 numberOfCommitsSinceLastMerge=${#commitsSinceLastMerge[@]}
 printf "${Brown}Preparing last $numberOfCommitsSinceLastMerge commits for cherry-picking${NC}
     \t${LightGray}Base branch:${NC} $baseBranch
-    \t${Green}Target branch:${NC} $targetBranch\n"
+    \t${Green}Target branch:${NC} $targetBranch\n\n"
 
 for ((i=$numberOfCommitsSinceLastMerge-1; i>-1; i--))
 do
-    printf "\n🍒 ${Brown}Cherry-picking ${NC}${commitsSinceLastMerge[$i]} ${Brown}from${NC} \'$currentBranch\' ${Brown}to${NC} \'$newBranch\'... 🍒\n"
+    printf "🍒 ${Brown}Cherry-picking ${NC}${commitsSinceLastMerge[$i]} ${Brown}from${NC} \'$currentBranch\' ${Brown}to${NC} \'$newBranch\'... 🍒\n"
     git cherry-pick -n ${commitsSinceLastMerge[$i]}
 done
 
