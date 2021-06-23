@@ -89,20 +89,18 @@ printf "${Brown}Creating new branch ${Green}$newBranch${NC}...\n"
 git checkout -b $newBranch
 
 echo ""
-printf "${Blue}Retrieving merged commits from $currentBranch${NC}...\n"
-commitsSinceLastMerge=$(git log --pretty=%H $baseBranch..$currentBranch --author="$currentAuthor")
+printf "${Blue}Retrieving merged commits from ${NC}$currentBranch${Blue}...${NC}\n"
+commitsSinceLastMerge=($(git log --pretty=%H $baseBranch..$currentBranch --author="$currentAuthor"))
 
-commitsByHash=( $commitsSinceLastMerge )
-numberOfCommitsSinceLastMerge=${#commitsByHash[@]}
+numberOfCommitsSinceLastMerge=${#commitsSinceLastMerge[@]}
 printf "${Brown}Preparing last $numberOfCommitsSinceLastMerge commits for cherry-picking${NC}
     \t${LightGray}Base branch:${NC} $baseBranch
     \t${Green}Target branch:${NC} $targetBranch\n"
 
-for i in $commitsSinceLastMerge
+for ((i=$numberOfCommitsSinceLastMerge-1; i>-1; i--))
 do
-    echo ""
-    printf "🍒 Cherry-picking $i from $currentBranch to $newBranch... 🍒\n"
-    git cherry-pick -n $i
+    printf "\n🍒 ${Brown}Cherry-picking ${NC}${commitsSinceLastMerge[$i]} ${Brown}from${NC} \'$currentBranch\' ${Brown}to${NC} \'$newBranch\'... 🍒\n"
+    git cherry-pick -n ${commitsSinceLastMerge[$i]}
 done
 
 if [ ! -z "$(git diff --name-status)" ]
